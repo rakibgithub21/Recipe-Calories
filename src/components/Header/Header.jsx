@@ -3,9 +3,9 @@ import { VscThreeBars } from "react-icons/vsc";
 
 const Header = () => {
     return (
-        <div className="container mx-auto py-10 px-5 md:px-0">
+        <div className="container mx-auto py-10 ">
             <nav className="flex justify-between items-center">
-                <h1 className="md:text-3xl text-xl font-bold text-[#150B2B]">Recipe Calories</h1>
+                <h1 className="md:text-3xl text-2xl font-medium md:font-bold text-[#150B2B]">Recipe Calories</h1>
                 <div className="text-[#150b2bb3] hidden md:flex gap-12 ">
                     <a className="hover:text-orange-400" href="">Home</a>
                     <a className="hover:text-orange-400" href="">Recipes</a>
