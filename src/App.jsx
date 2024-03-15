@@ -2,7 +2,8 @@
 import './App.css'
 import Banner from './components/Banner/Banner'
 import Header from './components/Header/Header'
-import Recipy from './components/Recipy/Recipy'
+import RecipeTitle from './components/RecipeTitle/RecipeTitle'
+import Container from './components/container/Container'
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     <>
       <Header></Header>
       <Banner></Banner>
-      <Recipy></Recipy>
+      <RecipeTitle></RecipeTitle>
+      <Container></Container>
     </>
   )
 }
