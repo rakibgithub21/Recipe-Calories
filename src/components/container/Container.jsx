@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Recipe from "../Recipe/Recipe";
 import Table from "../Table/Table";
+import LastTable from "../LastTable/LastTable";
 
 
 const Container = () => {
@@ -18,6 +19,8 @@ const Container = () => {
     // want to cock button handler:
     const [items, setItems] = useState([])
 
+
+
     const wantToCock = (recipe) => {
         if (items.includes(recipe)) {
             alert('You select this before')
@@ -29,12 +32,19 @@ const Container = () => {
     }
 
     //preparing button handler :
+    const [arrays, setArrays] = useState([])
+
     const prepairing = (item) => {
         const remaining = items.filter(i => i.recipe_id !== item.recipe_id);
-        // const matched = items.filter(i => i.recipe_id === item.recipe_id);
+        const matched = recipes.find(i => i.recipe_id === item.recipe_id);
+        const array = [...arrays, matched]
+        setArrays(array)
+        setItems(remaining);
 
-        setItems(remaining)
+
     }
+
+    console.log(arrays);
 
 
 
@@ -58,6 +68,11 @@ const Container = () => {
                     prepairing={prepairing}
 
                 ></Table>
+                <h1 className="text-center text-2xl font-semibold my-3">Currently cooking: {arrays.length}</h1>
+                <hr className="w-4/5 mx-auto " />
+                <LastTable
+                    arrays={arrays}
+                ></LastTable>
 
 
             </div>
