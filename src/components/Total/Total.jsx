@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 const Total = ({ arrays }) => {
     console.log(arrays);
@@ -10,7 +10,7 @@ const Total = ({ arrays }) => {
     }
     
     return (
-        <div className="flex justify-center gap-10 my-5">
+        <div className="flex justify-center gap-10 my-5 text-lg">
             <div className="flex gap-5">
                 <h1>Total Times=</h1>
                 <p className="text-end">{totalTime}</p>
@@ -21,6 +21,9 @@ const Total = ({ arrays }) => {
             </div>
         </div>
     );
+};
+Total.propTypes = {
+    arrays: PropTypes.array,
 };
 
 export default Total;
