@@ -7,8 +7,8 @@ const LastRow = ({ array, index }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{recipe_name}</td>
-            <td>{preparing_time}</td>
-            <td>{calories}</td>
+            <td>{preparing_time} minutes</td>
+            <td>{calories} calories</td>
         </tr>
     );
 };
