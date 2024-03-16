@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe, wantToCock }) => {
     const { recipe_name, calories, ingredients, preparing_time, recipe_image, short_description } = recipe;
-    console.log(recipe);
+    // console.log(recipe);
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-base-100 shadow-xl border-gray-300 border">
             <figure><img className="w-full p-7 rounded-[35px]" src={recipe_image} alt="Shoes" /></figure>
             <div className="card-body">
                 <div className="space-y-3">
@@ -38,7 +38,7 @@ const Recipe = ({ recipe }) => {
 
 
                 <div className="card-actions ">
-                    <button className="btn bg-[#0BE58A] text-lg font-medium rounded-3xl">Want to Cook</button>
+                    <button onClick={() => wantToCock(recipe)} className="btn bg-[#0BE58A] text-lg font-medium rounded-3xl">Want to Cook</button>
                 </div>
             </div>
         </div>
@@ -47,6 +47,7 @@ const Recipe = ({ recipe }) => {
 
 Recipe.propTypes = {
     recipe: PropTypes.object,
+    wantToCock: PropTypes.func,
 };
 
 export default Recipe;

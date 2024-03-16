@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Recipe from "../Recipe/Recipe";
+import Table from "../Table/Table";
 
 
 const Container = () => {
@@ -10,7 +11,32 @@ const Container = () => {
         fetch('fakeapi.json')
             .then(res => res.json())
             .then(data => setRecipes(data))
-    },[])
+    }, [])
+
+
+
+    // want to cock button handler:
+    const [items, setItems] = useState([])
+
+    const wantToCock = (recipe) => {
+        if (items.includes(recipe)) {
+            alert('You select this before')
+        }
+        else {
+            const newItems = [...items, recipe];
+            setItems(newItems)
+        }
+    }
+
+    //preparing button handler :
+    const prepairing = (item) => {
+        const remaining = items.filter(i => i.recipe_id !== item.recipe_id);
+        // const matched = items.filter(i => i.recipe_id === item.recipe_id);
+
+        setItems(remaining)
+    }
+
+
 
 
     return (
@@ -20,10 +46,19 @@ const Container = () => {
                     recipes.map(recipe => <Recipe
                         key={recipe.recipe_id}
                         recipe={recipe}
+                        wantToCock={wantToCock}
                     ></Recipe>)
                 }
             </div>
-            <div className="col-span-2 border border-black">
+            <div className="col-span-2 border border-[#28282833] rounded-2xl h-[640px]">
+                <h1 className="text-center text-2xl font-semibold my-3">Want to cook: {items.length}</h1>
+                <hr className="w-4/5 mx-auto " />
+                <Table
+                    items={items}
+                    prepairing={prepairing}
+
+                ></Table>
+
 
             </div>
         </div>
