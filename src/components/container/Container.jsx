@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import Recipe from "../Recipe/Recipe";
 import Table from "../Table/Table";
 import LastTable from "../LastTable/LastTable";
+import 'react-toastify/dist/ReactToastify.css';
+import { Bounce, ToastContainer, toast } from "react-toastify";
 
 
 const Container = () => {
-
+    const notify = () => toast("Wow so easy !");
 
     const [recipes, setRecipes] = useState([]);
     useEffect(() => {
@@ -23,7 +25,19 @@ const Container = () => {
 
     const wantToCock = (recipe) => {
         if (items.includes(recipe)) {
-            alert('You select this before')
+            // alert('You select this before')
+            toast('😡 You already add this before', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
+
         }
         else {
             const newItems = [...items, recipe];
@@ -60,7 +74,7 @@ const Container = () => {
                     ></Recipe>)
                 }
             </div>
-            <div className="col-span-2 border border-[#28282833] rounded-2xl h-[640px]">
+            <div className="col-span-2 border border-[#28282833] rounded-2xl h-[740px] overflow-auto sticky top-0">
                 <h1 className="text-center text-2xl font-semibold my-3">Want to cook: {items.length}</h1>
                 <hr className="w-4/5 mx-auto " />
                 <Table
@@ -76,6 +90,7 @@ const Container = () => {
 
 
             </div>
+            <ToastContainer />
         </div>
     );
 };

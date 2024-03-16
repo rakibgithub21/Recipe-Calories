@@ -3,15 +3,15 @@ import LastRow from "../LastRow/LastRow";
 
 const LastTable = ({ arrays }) => {
     return (
-        <div className="overflow-x-auto mt-10">
+        <div className="overflow-x-auto mt-8">
             <table className="table">
                 {/* head */}
                 <thead>
-                    <tr>
+                    <tr className="text-base">
                         <th></th>
                         <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
+                        <th>Time</th>
+                        <th>Calories</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,8 +22,8 @@ const LastTable = ({ arrays }) => {
                             index={idx}
                         ></LastRow>)
                     }
-                    
-                    
+
+
                 </tbody>
             </table>
         </div>

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Table = ({ items, prepairing }) => {
     // console.log(items);
     return (
-        <div className="overflow-x-auto my-2">
+        <div className="overflow-x-auto my-8">
             <table className="table">
                 {/* head */}
                 <thead>
@@ -18,12 +18,12 @@ const Table = ({ items, prepairing }) => {
                 </thead>
                 <tbody>
                     {
-                        items.map((item,idx) => <Tablerow
+                        items.map((item, idx) => <Tablerow
                             key={idx}
                             item={item}
                             index={idx}
                             prepairing={prepairing}
-                        ></Tablerow>) 
+                        ></Tablerow>)
                     }
 
 
