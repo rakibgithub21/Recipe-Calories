@@ -1,5 +1,6 @@
 import LastRow from "../LastRow/LastRow";
 import PropTypes from 'prop-types';
+import Total from "../Total/Total";
 
 const LastTable = ({ arrays }) => {
     return (
@@ -26,6 +27,7 @@ const LastTable = ({ arrays }) => {
 
                 </tbody>
             </table>
+            <Total arrays={arrays}></Total>
         </div>
     );
 };
