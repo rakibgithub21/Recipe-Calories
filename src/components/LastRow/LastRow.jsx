@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 const LastRow = ({ array, index }) => {
     console.log(array);
@@ -12,5 +12,8 @@ const LastRow = ({ array, index }) => {
         </tr>
     );
 };
-
+LastRow.propTypes = {
+    array: PropTypes.object,
+    index: PropTypes.number,
+};
 export default LastRow;

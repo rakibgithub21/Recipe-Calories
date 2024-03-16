@@ -1,5 +1,5 @@
 import LastRow from "../LastRow/LastRow";
-
+import PropTypes from 'prop-types';
 
 const LastTable = ({ arrays }) => {
     return (
@@ -28,6 +28,10 @@ const LastTable = ({ arrays }) => {
             </table>
         </div>
     );
+};
+
+LastTable.propTypes = {
+    arrays: PropTypes.array,
 };
 
 export default LastTable;

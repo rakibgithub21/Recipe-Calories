@@ -7,7 +7,7 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 
 
 const Container = () => {
-    const notify = () => toast("Wow so easy !");
+    // const notify = () => toast("Wow so easy !");
 
     const [recipes, setRecipes] = useState([]);
     useEffect(() => {
@@ -64,8 +64,8 @@ const Container = () => {
 
 
     return (
-        <div className="container mx-auto grid grid-cols-5 gap-5 my-10">
-            <div className="col-span-3  grid grid-cols-2 gap-5">
+        <div className="container mx-auto grid lg:grid-cols-5 gap-5 my-10">
+            <div className="lg:col-span-3  grid lg:grid-cols-2 gap-5">
                 {
                     recipes.map(recipe => <Recipe
                         key={recipe.recipe_id}
