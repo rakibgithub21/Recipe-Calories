@@ -26,7 +26,7 @@ const Container = () => {
     const wantToCock = (recipe) => {
         if (items.includes(recipe)) {
             // alert('You select this before')
-            toast('😡 You already add this before', {
+            toast.error('😡 You already add this before', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -65,7 +65,7 @@ const Container = () => {
 
     return (
         <div className="container mx-auto grid lg:grid-cols-5 gap-5 my-10">
-            <div className="lg:col-span-3  grid md:grid-cols-2 gap-5">
+            <div className="lg:col-span-3  grid lg:grid-cols-2 gap-5">
                 {
                     recipes.map(recipe => <Recipe
                         key={recipe.recipe_id}
