@@ -27,11 +27,11 @@ const Recipe = ({ recipe, wantToCock }) => {
                 <hr />
                 <div className="flex gap-8">
                     <div className="flex gap-2 items-center text-[#282828cc] text-lg">
-                        <span><CiClock2 /></span>
+                        <span><CiClock2 className="text-2xl" /></span>
                         <span>{preparing_time} minutes</span>
                     </div>
                     <div className="flex items-center gap-2 text-[#282828cc] text-lg">
-                        <span><GiStrong /></span>
+                        <span><GiStrong className="text-2xl" /></span>
                         <span>{calories} Calories</span>
                     </div>
                 </div>
