@@ -1,8 +1,11 @@
-
+import backgroundImage from '../../assets/background.png'
 
 const Banner = () => {
+    const divStyle = {
+        backgroundImage: `url(${backgroundImage})`,
+    }
     return (
-        <div className="hero min-h-[600px] container mx-auto  md:rounded-2xl" style={{ backgroundImage: 'url(https://i.ibb.co/NsSLRF6/background.png)' }}>
+        <div className="hero min-h-[600px] container mx-auto  md:rounded-2xl" style={divStyle}>
             <div className="hero-content text-center text-neutral-content ">
                 <div>
                     <h1 className="mb-7 lg:text-5xl md:text-3xl font-bold lg:w-[900px] text-lg  mx-auto">Discover an exceptional cooking class tailored for you!</h1>
