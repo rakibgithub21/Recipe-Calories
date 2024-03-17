@@ -26,7 +26,7 @@ const Container = () => {
     const wantToCock = (recipe) => {
         if (items.includes(recipe)) {
             // alert('You select this before')
-            toast.error('😡 You already add this before', {
+            toast.error('😡 You add this before', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -54,7 +54,17 @@ const Container = () => {
         const array = [...arrays, matched]
         setArrays(array)
         setItems(remaining);
-
+        toast.success('🎉 Congratulations! 🎉 ', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
 
     }
 
